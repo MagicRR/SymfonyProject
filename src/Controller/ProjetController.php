@@ -28,6 +28,22 @@ class ProjetController extends Controller{
     }
 
     /**
+    * @Route("/projet/", name="projet_list_slash")
+    */
+    public function projet_list_slash(){
+
+        $temp       = "Vous êtes sur la page /projet";
+        $constante  = "J'affiche la liste de tous les projets.";
+
+        return $this->render(
+            'blog/leblog.html.twig', array(
+            'temp' => $temp,
+            'constante' => $constante
+
+        ));
+    }
+
+    /**
     * @Route("/projet/{slug}", name="projet_id")
     */
     public function projet_id($slug){
