@@ -5,3 +5,12 @@
 # app_lucky_number:
 #     path: /lucky/number
 #     controller: App\Controller\LuckyController::number
+
+# config/routes.yaml
+projet_list:
+    path:     /projet
+    controller: App\Controller\ProjetController::projet_list
+
+projet_id:
+    path:     /projet/{slug}
+    controller: App\Controller\ProjetController::projet_id
