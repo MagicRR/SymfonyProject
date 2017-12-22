@@ -44,7 +44,7 @@ class ProjetController extends Controller{
     }
 
     /**
-    * @Route("/projet/{slug}", name="projet_id")
+    * @Route("/projet/{slug}", name="projet_id", requirements={"slug"="\d+"})
     */
     public function projet_id($slug){
 
@@ -58,6 +58,20 @@ class ProjetController extends Controller{
         ));
     }
 
+    /**
+    * @Route("/projet/{page}", name="projet_id_alphabetique")
+    */
+    public function projet_id_alphabetique($page){
+
+        $temp       = "Vous êtes sur la page /projet/" . $page;
+        $constante  = "Je n'affiche qu'un seul projet, avec pour ID Alphabétique : " . $page . ".";
+
+        return $this->render(
+            'blog/leblog.html.twig', array(
+            'temp' => $temp,
+            'constante' => $constante
+        ));
+    }
 
 }
 
